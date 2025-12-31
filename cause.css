@@ -8,6 +8,7 @@
 }
 
 body {
+    position: relative;
     min-height: 100vh;
     background: linear-gradient(-45deg, #1c1b2a, #2a1f35, #1e2a36, #241b2f);
     background-size: 400% 400%;
@@ -15,6 +16,18 @@ body {
     font-family: 'Quicksand', sans-serif;
     overflow-x: hidden;
     padding: 2rem;
+}
+
+/* Subtle GIF background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("./gif1.gif") center / cover no-repeat;
+    opacity: 0.15;
+    filter: brightness(0.6) blur(1px);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .custom-cursor {

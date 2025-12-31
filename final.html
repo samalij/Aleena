@@ -7,23 +7,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg,
-                #1c1b2a 0%,
-                #2a1f35 25%,
-                #1e2a36 50%,
-                #241b2f 75%,
-                #1c1b2a 100%);
-            background-size: 400% 400%;
-            animation: gradientFlow 15s ease infinite;
-            font-family: 'Dancing Script', cursive;
-            color: #b48cff;
-            text-align: center;
-        }
+       body {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+        #1c1b2a 0%,
+        #2a1f35 25%,
+        #1e2a36 50%,
+        #241b2f 75%,
+        #1c1b2a 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+
+    font-family: 'Dancing Script', cursive;
+    color: #b48cff;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Subtle background GIF layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("./gif2.gif") center / cover no-repeat;
+    opacity: 0.15;
+    filter: brightness(0.55) blur(1px);
+    z-index: -1;
+    pointer-events: none;
+}
+
 
         @keyframes gradientFlow {
             0% { background-position: 0% 50%; }

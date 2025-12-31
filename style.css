@@ -6,6 +6,7 @@
 }
 
 body {
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,8 +26,20 @@ body {
 
     font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
     overflow: hidden;
-    position: relative;
 }
+
+/* Subtle animated GIF background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("./gif1.gif") center / cover no-repeat;
+    opacity: 0.15;
+    filter: brightness(0.55) blur(1px);
+    z-index: -1;
+    pointer-events: none;
+}
+
 
 .cursor {
     width: 20px;
